@@ -5,6 +5,7 @@ print("Last digit of", number, end="")
 
 if number < 0:
     endOfN = (-number) % 10
+    endOfN *= -1
 else:
     endOfN = number % 10
 
