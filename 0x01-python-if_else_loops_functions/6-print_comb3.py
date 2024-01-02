@@ -4,4 +4,4 @@ for i in range(0, 10):
         if i == 8 and y == 9:
             print(89)
             break
-        print(f"{i}{y}, ", end="")
+        print("{}{}, ".format(i, y), end="")
