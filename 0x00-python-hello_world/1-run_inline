@@ -1,4 +1,2 @@
 #!/bin/bash
-echo $PYCODE > tmp
-python3 tmp
-rm tmp
+echo "$PYCODE" | python3 -c "$(cat)"
