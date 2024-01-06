@@ -1,15 +1,21 @@
 #include "lists.h"
 
+/**
+ * list_len - function that returns the number of elements
+ * in a linked 'listint_t' list
+ * @h: pointer to struct node
+ * Return: returns number of elements
+ */
 size_t list_len(const listint_t *h)
 {
-        int i = 0;
+	int i = 0;
 
-        while (h != NULL)
-        {
-                i++;
-                h = h->next;
-        }
-        return (i);
+	while (h != NULL)
+	{
+		i++;
+		h = h->next;
+	}
+	return (i);
 }
 
 /**
@@ -26,13 +32,13 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL)
 		return (1);
-	while(temp)
+	while (temp)
 	{
 		arr[i] = temp->n;
 		temp = temp->next;
 		i++;
 	}
-	for (j = 0; j < (i/2); j++)
+	for (j = 0; j < (i / 2); j++)
 	{
 		if (arr[j] != arr[i - j - 1])
 			return (0);
