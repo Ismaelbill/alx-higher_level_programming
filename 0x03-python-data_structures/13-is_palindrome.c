@@ -1,4 +1,6 @@
 #include "lists.h"
+#include <stdio.h>
+#include <stddef.h>
 
 /**
  * list_len - function that returns the number of elements
