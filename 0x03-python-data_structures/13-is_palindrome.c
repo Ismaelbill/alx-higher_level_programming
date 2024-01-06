@@ -23,11 +23,11 @@ size_t list_len(const listint_t *h)
  * @head: ptr to ptr to linked list
  * Return: returns 1 if palindrome, otherwise 0
  */
- int is_palindrome(listint_t **head)
+int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
 	int *arr;
-	int i = 0, j;
+	int i = 0, start = 0, end;
 
 	if (*head == NULL)
 		return (1);
@@ -35,19 +35,22 @@ size_t list_len(const listint_t *h)
 	if (!arr)
 		return (1);
 
-	while(temp)
+	while (temp)
 	{
 		arr[i] = temp->n;
 		temp = temp->next;
 		i++;
 	}
-	for (j = 0; j < (i/2); j++)
+	end = i - 1;
+	while (start < end)
 	{
-		if (arr[j] != arr[i - j - 1])
+		if (arr[start] != arr[end])
 		{
 			free(arr);
 			return (0);
 		}
+		start++;
+		end--;
 	}
 	free(arr);
 	return (1);
