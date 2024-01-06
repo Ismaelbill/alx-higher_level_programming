@@ -3,17 +3,17 @@
 /**
  * list_len - function that returns the number of elements
  * in a linked 'listint_t' list
- * @h: pointer to struct node
+ * @hh: pointer to struct node
  * Return: returns number of elements
  */
-size_t list_len(const listint_t *h)
+size_t list_len(listint_t *hh)
 {
 	int i = 0;
 
-	while (h != NULL)
+	while (hh != NULL)
 	{
 		i++;
-		h = h->next;
+		hh = hh->next;
 	}
 	return (i);
 }
