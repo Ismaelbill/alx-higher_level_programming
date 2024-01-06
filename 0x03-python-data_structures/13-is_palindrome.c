@@ -1,5 +1,17 @@
 #include "lists.h"
 
+size_t list_len(const listint_t *h)
+{
+        int i = 0;
+
+        while (h != NULL)
+        {
+                i++;
+                h = h->next;
+        }
+        return (i);
+}
+
 /**
  * is_palindrome - function checks if a singly linked list is a
  * palindrome
@@ -9,27 +21,20 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp = *head;
-	int arr[1024], arr2[1024];
-	int i = 0, j, k;
+	int arr[list_len(temp)];
+	int i = 0, j;
 
-	if (*head == NULL || head == NULL)
+	if (*head == NULL)
 		return (1);
 	while(temp)
 	{
 		arr[i] = temp->n;
-		arr2[i] = temp->n;
 		temp = temp->next;
 		i++;
 	}
 	for (j = 0; j < (i/2); j++)
 	{
-		k = arr[j];
-		arr[j] = arr[i - j - 1];
-		arr[i - j - 1] = k;
-	}
-	for (j = 0; j < i; j++)
-	{
-		if (arr[j] != arr2[j])
+		if (arr[j] != arr[i - j - 1])
 			return (0);
 	}
 	return (1);

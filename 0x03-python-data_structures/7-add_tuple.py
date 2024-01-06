@@ -13,6 +13,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
         b += (0, )
     a = a[:2]
     b = b[:2]
-    
+
     result = tuple(x + y for x, y in zip(a, b))
     return result
