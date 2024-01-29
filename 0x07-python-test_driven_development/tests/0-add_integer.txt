@@ -1,0 +1,50 @@
+Import module:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+test first:
+        >>> add_integer(1, 2)
+        3
+
+test third:
+	>>> add_integer(2)
+	100
+
+test fourth:
+	>>> add_integer(100.3, -2)
+	98
+
+test with None:
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+test with str:
+	>>> add_integer(4, "School")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+test empty params:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+test both strs:
+	>>> add_integer("alx", "school")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+test casting string to int:
+	>>> add_integer(int('hello'))
+	Traceback (most recent call last):
+        ...
+	ValueError: invalid literal for int() with base 10: 'hello'
+
+test for infinity:
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer

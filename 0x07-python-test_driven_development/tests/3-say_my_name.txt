@@ -1,0 +1,19 @@
+
+Import module:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+case one:
+	>>> say_my_name("Logan", "Roy")
+	My name is Logan Roy
+
+case two:
+	>>> say_my_name(12, "Zidane")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+case three:
+        >>> say_my_name("Zidane", 1)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string

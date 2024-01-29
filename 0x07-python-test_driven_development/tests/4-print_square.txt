@@ -1,0 +1,20 @@
+
+Import module:
+	>>> print_square = __import__('4-print_square').print_square
+
+test with str:
+	>>> print_square('str')
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+test with None:
+	>>> print_square(None)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+test with None:
+        >>> print_square(4)
+	####
+	####
+	####
+	####
