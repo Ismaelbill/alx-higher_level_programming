@@ -46,6 +46,8 @@ class Rectangle:
         return 2 * (self.height + self.width)
 
     def __str__(self):
+        """ print the rectangle with the character # """
+
         if self.height == 0 or self.width == 0:
             return '\n'
         result = ''
@@ -56,4 +58,6 @@ class Rectangle:
         return result[:-1]
 
     def __repr__(self):
+        """ string representation of the rectangle """
+
         return "Rectangle({}, {})".format(self.width, self.height)
