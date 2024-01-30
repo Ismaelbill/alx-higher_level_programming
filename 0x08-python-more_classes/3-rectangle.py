@@ -49,10 +49,8 @@ class Rectangle:
         """ print the rectangle with the character # """
 
         if self.__height == 0 or self.__width == 0:
-            return '\n'
+            return ''
         result = ''
         for i in range(self.__height):
-            for x in range(self.__width):
-                result += '#'
-            result += '\n'
+                result += (('#' * self.__width) + '\n')
         return result[:-1]
