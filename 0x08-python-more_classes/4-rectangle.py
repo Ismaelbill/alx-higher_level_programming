@@ -48,13 +48,11 @@ class Rectangle:
     def __str__(self):
         """ print the rectangle with the character # """
 
-        if self.height == 0 or self.width == 0:
-            return '\n'
+        if self.__height == 0 or self.__width == 0:
+            return ''
         result = ''
-        for i in range(self.height):
-            for x in range(self.width):
-                result += '#'
-            result += '\n'
+        for i in range(self.__height):
+            result += (('#' * self.__width) + '\n')
         return result[:-1]
 
     def __repr__(self):
