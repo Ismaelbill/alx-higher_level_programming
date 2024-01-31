@@ -3,11 +3,13 @@
 Dividing A Matrix
 """
 
+
 def check_int_float(ls):
     for i in ls:
         for x in i:
             if not isinstance(x, int) and not isinstance(x, float):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix (list of\
+                        lists) of integers/floats")
 
 
 def matrix_divided(matrix, div):

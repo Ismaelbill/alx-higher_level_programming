@@ -3,6 +3,7 @@
 function for printing the whole name
 """
 
+
 def say_my_name(first_name, last_name=""):
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")

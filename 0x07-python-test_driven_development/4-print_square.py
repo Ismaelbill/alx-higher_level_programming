@@ -3,6 +3,7 @@
 print square module
 """
 
+
 def print_square(size):
 
     if isinstance(size, float) and size < 0:
