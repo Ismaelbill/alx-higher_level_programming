@@ -54,6 +54,7 @@ class Rectangle(Base):
         self.__y = val
 
     def validation_func(self, name, var, value=True):
+        """ function that validate setter methods """
         if type(var) is not int:
             raise TypeError("{} must be an integer".format(name))
         if not value and var <= 0:
