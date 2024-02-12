@@ -12,10 +12,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ constructor """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -23,6 +23,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, val):
+        self.validation_func("width", val, False)
         self.__width = val
 
     @property
@@ -31,6 +32,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, val):
+        self.validation_func("height", val, False)
         self.__height = val
 
     @property
@@ -39,6 +41,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, val):
+        self.validation_func("x", val)
         self.__x = val
 
     @property
@@ -47,4 +50,13 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, val):
+        self.validation_func("y", val)
         self.__y = val
+
+    def validation_func(self, name, var, value=True):
+        if type(var) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if not value and var <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        elif value and var < 0:
+            raise ValueError("{} must be >= 0".format(name))
