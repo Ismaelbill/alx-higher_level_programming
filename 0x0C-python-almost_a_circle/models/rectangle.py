@@ -76,3 +76,23 @@ class Rectangle(Base):
         """ returns a string representation for instances of cls """
         return "[Rectangle] ({}) {}/{} - {}/{}".\
             format(self.id, self.x, self.y, self.width, self.height)
+
+    def edit_update(self, id=None, width=None, height=None, x=None, y=None):
+        """ assigning method """
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """ no-keyword argument public method """
+        if args:
+            self.edit_update(*args)
+        elif kwargs:
+            self.edit_update(**kwargs)
