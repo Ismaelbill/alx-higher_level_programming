@@ -61,3 +61,18 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(name))
         elif value and var < 0:
             raise ValueError("{} must be >= 0".format(name))
+
+    def area(self):
+        """ returns the area value """
+        return self.width * self.height
+
+    def display(self):
+        """ prints in stdout character '#' """
+        print('\n' * self.y, end='')
+        for i in range(self.height):
+            print(' ' * self.x + '#' * self.width)
+
+    def __str__(self):
+        """ returns a string representation for instances of cls """
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.x, self.y, self.width, self.height)
