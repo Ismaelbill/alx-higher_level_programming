@@ -26,3 +26,14 @@ class Square(Rectangle):
     def size(self, val):
         self.width = val
         self.height = val
+
+    def edit_update(self, id=None, size=None, x=None, y=None):
+        """ assigning method """
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y

@@ -96,3 +96,7 @@ class Rectangle(Base):
             self.edit_update(*args)
         elif kwargs:
             self.edit_update(**kwargs)
+
+    def to_dictionary(self):
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+            'height': self.height, 'width': self.width}
