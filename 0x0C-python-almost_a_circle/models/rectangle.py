@@ -98,5 +98,6 @@ class Rectangle(Base):
             self.edit_update(**kwargs)
 
     def to_dictionary(self):
+        """ dict representation of rectangle """
         return {'x': self.x, 'y': self.y, 'id': self.id,
-            'height': self.height, 'width': self.width}
+                'height': self.height, 'width': self.width}

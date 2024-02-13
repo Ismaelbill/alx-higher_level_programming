@@ -37,3 +37,10 @@ class Square(Rectangle):
             self.x = x
         if y is not None:
             self.y = y
+
+        def update(self, *args, **kwargs):
+            """ no-keyword argument public method """
+            if args:
+                self.edit_update(*args)
+            elif kwargs:
+                self.edit_update(**kwargs)
