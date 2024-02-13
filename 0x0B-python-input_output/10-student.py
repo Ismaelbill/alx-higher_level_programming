@@ -14,3 +14,13 @@ class Student:
         """ dictionary representation """
         if attrs is None:
             return self.__dict__
+        else:
+            diction = {}
+            for i in attrs:
+                if i == 'first_name':
+                    diction['first_name'] = self.first_name
+                if i == 'last_name':
+                    diction['last_name'] = self.last_name
+                if i == 'age':
+                    diction['age'] = self.age
+            return diction
