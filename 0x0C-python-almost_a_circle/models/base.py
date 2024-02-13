@@ -47,4 +47,12 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        pass
+        """ returns an instance with all attributes already set """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls == Square:
+            instance = cls(dictionary['size'])
+        elif cls == Rectangle:
+            instance = cls(dictionary['width'], dictionary['height'])
+        instance.update(**dictionary)
+        return instance
