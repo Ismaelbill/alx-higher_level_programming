@@ -74,8 +74,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ returns a string representation for instances of cls """
-        return "[Rectangle] ({}) {}/{} - {}/{}".\
-            format(self.id, self.x, self.y, self.width, self.height)
+        return "[{}] ({}) {}/{} - {}/{}".\
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
+                   self.height)
 
     def edit_update(self, id=None, width=None, height=None, x=None, y=None):
         """ assigning method """
