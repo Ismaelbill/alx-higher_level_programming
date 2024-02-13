@@ -56,3 +56,18 @@ class Base:
             instance = cls(dictionary['width'], dictionary['height'])
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+        import os
+        fileName = cls.__name__ + '.json'
+        if not os.path.exists(fileName):
+            return []
+        else:
+            with open(fileName, encoding='utf-8') as f:
+                a = []
+                read = f.read()
+                for deli in cls.from_json_string(read):
+                    a += [cls.create(**deli)]
+                return a
