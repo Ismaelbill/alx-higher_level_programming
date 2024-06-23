@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Update a state """
+""" Delete a state """
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -14,7 +14,7 @@ if "__main__" == __name__:
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name.like('%a%')).all()
+    states = session.query(State).filter(State.name.ilike('%a%')).all()
     for st in states:
         session.delete(st)
     session.commit()
