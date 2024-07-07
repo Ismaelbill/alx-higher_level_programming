@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     j = 0
     for i in list(r.json()):
-        print(i['sha'], i['commit']['author']['name'])
+        print('{}:'.format(i['sha']), i['commit']['author']['name'])
         j += 1
         if j == 10:
             exit(0)
