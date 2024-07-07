@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" listing 10 commits """
+""" listing 10 commits from a giving repo"""
 
 if __name__ == "__main__":
     import requests
@@ -9,9 +9,5 @@ if __name__ == "__main__":
 
     r = requests.get(var)
 
-    j = 0
-    for i in list(r.json()):
-        print('{}:'.format(i['sha']), i['commit']['author']['name'])
-        j += 1
-        if j == 10:
-            exit(0)
+    for i in r.json()[:10]:
+        print('{}: {}'.format(i['sha'], i['commit']['author']['name']))
