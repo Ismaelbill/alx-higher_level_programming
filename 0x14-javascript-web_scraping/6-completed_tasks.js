@@ -17,5 +17,5 @@ request(process.argv[2], function (_, res, body) {
     }
     obj[`${i}`] = j;
   }
-  console.log(obj);
+  console.log(JSON.stringify(obj));
 });
