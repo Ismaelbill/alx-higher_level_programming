@@ -2,7 +2,7 @@
 
 const request = require('request');
 
-request('https://jsonplaceholder.typicode.com/todos', function (_, res, body) {
+request(process.argv[2], function (_, res, body) {
   const data = JSON.parse(body);
 
   const obj = {};
