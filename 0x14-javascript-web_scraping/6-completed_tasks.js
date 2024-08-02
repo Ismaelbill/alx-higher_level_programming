@@ -7,8 +7,12 @@ request(process.argv[2], function (_, res, body) {
 
   const obj = {};
   for (const user of data) {
-    if (obj[user.userId] === undefined) { obj[user.userId] = 0; }
-    if (user.completed) { obj[user.userId]++; }
+    if (user.completed) {
+      if (obj[user.userId] === undefined) {
+        obj[user.userId] = 0;
+      }
+      obj[user.userId]++;
+    }
   }
   console.log((obj));
 });
